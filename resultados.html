@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnostico</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="./estilos.css">
+</head>
+<body>
+    
+    <header>
+        <nav class="navbar navbar-expand-lg menu navbar-dark">
+            <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="./home.html">Areas</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./valoracion.html">Valoración</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./competitividad.html">Mapa de competitividad</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="./resultados.html">Resultados</a>
+                  </li>
+                  
+                </ul>
+                <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+          </nav>
+    </header>
+
+
+    <main>
+        <section class="container my-5">
+            <div class="row">
+                <div class="col-12 col-md-5">
+                    <img src="./img/mascota.webp" alt="" class="img-fluid">
+                </div>
+                <div class="col-12 col-md-7 align-self-center">
+                    <div class="alert alert-primary" role="alert">
+                        <p>
+                            En esta sección encontrarás una representación gráfica del diagnóstico realizado a tu empresa, organizada por áreas estratégicas. Estas visualizaciones permiten comprender de manera ágil y comparativa los niveles de desarrollo, cumplimiento y oportunidad dentro de cada dimensión evaluada.
+
+                            Se incluyen dos tipos de gráficos:
+                            
+                            Tabla de resultados por área: Resume los puntajes obtenidos en cada subcategoría y presenta el total por área en porcentajes.
+                            
+                            Gráfico de radar: Permite visualizar el desempeño general de la empresa en las distintas áreas evaluadas, facilitando la identificación de fortalezas y oportunidades de mejora desde una perspectiva sistémica.
+                            
+                            Estas herramientas han sido diseñadas para facilitar la toma de decisiones estratégicas y priorizar acciones de mejora continua. Te invitamos a analizarlas con atención y, si lo consideras pertinente, compartirlas con tu equipo de trabajo o asesor empresarial.
+
+                        </p>
+                      </div>
+                      
+                </div>
+            </div>
+        </section>
+
+
+        <section class="container">
+           <div class="row">
+            <div class="col-12 col-md-6">
+
+                <div>
+                    <h3 class="text-center">Gráfico de Radar – Diagnóstico por Áreas</h3>
+                    <canvas id="radarChart" class="img-fluid"></canvas>
+                  </div>
+
+            </div>
+            <div class="col-12 col-md-6">
+                <table class="table table-bordered table-hover table-striped align-middle">
+                    <thead class="table-dark">
+                      <tr>
+                        <th>Área</th>
+                        <th>Descripción</th>
+                        <th>Puntaje</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="table-primary"><td rowspan="3">1. Planeación Estratégica</td><td>Proceso de Planeación Estratégica</td><td>63%</td></tr>
+                      <tr class="table-primary"><td>Implementación de la Estrategia</td><td>100%</td></tr>
+                      <tr class="table-primary"><th>Total Área</th><th>82%</th></tr>
+              
+                      <tr class="table-success"><td rowspan="8">2. Producción y Operaciones</td><td>Planificación y Proceso de Producción</td><td>100%</td></tr>
+                      <tr class="table-success"><td>Capacidad del Proceso</td><td>100%</td></tr>
+                      <tr class="table-success"><td>Mantenimiento Preventivo</td><td>100%</td></tr>
+                      <tr class="table-success"><td>Normas de Calidad</td><td>100%</td></tr>
+                      <tr class="table-success"><td>Aspectos Ambientales</td><td>100%</td></tr>
+                      <tr class="table-success"><td>Mejoras</td><td>100%</td></tr>
+                      <tr class="table-success"><td>Indicadores</td><td>100%</td></tr>
+                      <tr class="table-success"><th>Total Área</th><th>100%</th></tr>
+              
+                      <tr class="table-warning"><td rowspan="3">3. Aseguramiento de la Calidad</td><td>Aspectos Generales de la Calidad</td><td>40%</td></tr>
+                      <tr class="table-warning"><td>Sistema de Calidad</td><td>100%</td></tr>
+                      <tr class="table-warning"><th>Total Área</th><th>70%</th></tr>
+              
+                      <tr><td rowspan="10">4. Comercialización</td><td>Mercado Nacional: Productos</td><td>100%</td></tr>
+                      <tr><td>Mercado Nacional: Servicios</td><td>100%</td></tr>
+                      <tr><td>Fuerza de ventas</td><td>100%</td></tr>
+                      <tr><td>Planeación de Exportación</td><td>100%</td></tr>
+                      <tr><td>Producción para Exportación</td><td>100%</td></tr>
+                      <tr><td>Competencia y Mercado</td><td>100%</td></tr>
+                      <tr><td>Distribución Físicas</td><td>100%</td></tr>
+                      <tr><td>Aspectos de Exportación</td><td>100%</td></tr>
+                      <tr><td>Participación en Ferias</td><td>100%</td></tr>
+                      <tr><th>Total Área</th><th>100%</th></tr>
+              
+                      <tr class="table-info"><td rowspan="4">5. Contabilidad y Finanzas</td><td>Monitoreo de Costos</td><td>86%</td></tr>
+                      <tr class="table-info"><td>Administración Financiera</td><td>70%</td></tr>
+                      <tr class="table-info"><td>Normas Legales y Tributarias</td><td>85%</td></tr>
+                      <tr class="table-info"><th>Total Área</th><th>87%</th></tr>
+              
+                      <tr class="table-secondary"><td rowspan="4">6. Capital Humano</td><td>Capacitación del Personal</td><td>100%</td></tr>
+                      <tr class="table-secondary"><td>Condiciones Laborales</td><td>80%</td></tr>
+                      <tr class="table-secondary"><td>Salud y Seguridad</td><td>100%</td></tr>
+                      <tr class="table-secondary"><th>Total Área</th><th>95%</th></tr>
+              
+                      <tr><td rowspan="4">7. Gestión Ambiental</td><td>Política Ambiental</td><td>100%</td></tr>
+                      <tr><td>Prácticas y Manejo Ambiental</td><td>100%</td></tr>
+                      <tr><td>Concientización del Personal</td><td>100%</td></tr>
+                      <tr><th>Total Área</th><th>100%</th></tr>
+              
+                      <tr><td rowspan="4">8. Sistemas de Información</td><td>Diseño del Sistema</td><td>100%</td></tr>
+                      <tr><td>Indicadores Estratégicos</td><td>100%</td></tr>
+                      <tr><td>Seguridad Informática</td><td>100%</td></tr>
+                      <tr><th>Total Área</th><th>100%</th></tr>
+              
+                      <tr class="table-light"><td>9. Investigación e Innovación</td><td>Procesos de I+D+i</td><td>100%</td></tr>
+                      <tr class="table-light"><th>Total Área</th><th colspan="2">100%</th></tr>
+                    </tbody>
+                  </table>
+                
+            </div>
+           </div>
+        </section>
+
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        const ctx = document.getElementById('radarChart').getContext('2d');
+        const data = {
+          labels: [
+            "Planeación Estratégica", "Producción y Operaciones", "Aseguramiento de la Calidad",
+            "Comercialización", "Contabilidad y Finanzas", "Capital Humano",
+            "Gestión Ambiental", "Sistemas de Información", "Investigación e Innovación"
+          ],
+          datasets: [{
+            label: "Puntaje por Área (%)",
+            data: [82, 100, 70, 100, 87, 95, 100, 100, 100],
+            fill: true,
+            backgroundColor: "rgba(54, 162, 235, 0.2)",
+            borderColor: "rgba(54, 162, 235, 1)",
+            pointBackgroundColor: "rgba(54, 162, 235, 1)",
+            pointBorderColor: "#fff",
+            pointHoverBackgroundColor: "#fff",
+            pointHoverBorderColor: "rgba(54, 162, 235, 1)"
+          }]
+        };
+    
+        const config = {
+          type: 'radar',
+          data: data,
+          options: {
+            responsive: true,
+            scales: {
+              r: {
+                beginAtZero: true,
+                max: 100,
+                ticks: {
+                  stepSize: 20
+                }
+              }
+            },
+            plugins: {
+              legend: {
+                position: 'top'
+              },
+              title: {
+                display: false
+              }
+            }
+          }
+        };
+    
+        new Chart(ctx, config);
+      </script>
+  
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+</body>
+</html>
