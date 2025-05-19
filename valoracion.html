@@ -1,661 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diagnostico</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-    <link rel="stylesheet" href="./estilos.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diagnostico</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+  <link rel="stylesheet" href="./estilos.css">
 </head>
+
 <body>
 
-    <header>
-        <nav class="navbar navbar-expand-lg menu navbar-dark">
-            <div class="container-fluid">
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="./home.html">Areas</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" href="./valoracion.html">Valoración</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="./competitividad.html">Mapa de competitividad</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="./resultados.html">Resultados</a>
-                  </li>
-                  
-                </ul>
-                <form class="d-flex" role="search">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Search</button>
+  <header>
+    <nav class="navbar navbar-expand-lg menu navbar-dark">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="./home.html">Areas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="./valoracion.html">Valoración</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./competitividad.html">Mapa de competitividad</a>
+            </li>
+            
+
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+
+  <main>
+    <section class="container my-5">
+      <div class="row">
+
+        <div class="col-12 col-md-12 align-self-center">
+          <div class="alert alert-primary" role="alert">
+            <p>
+              Esta sección del diagnóstico busca evaluar diferentes aspectos estratégicos, operativos y financieros de
+              su empresa mediante una serie de afirmaciones. Para cada afirmación, seleccione el nivel que mejor
+              representa la situación actual de su organización, usando una escala del 1 al 4:
+              <br><br>
+              1 - No aplica: La afirmación no es relevante para su empresa.
+              <br>
+              2 - Bajo cumplimiento: La empresa apenas ha iniciado o tiene grandes falencias en este aspecto.
+              <br>
+              3 - Cumplimiento parcial: Existen avances importantes, pero aún no se consolida completamente.
+              <br>
+              4 - Cumplimiento alto: La afirmación se cumple en su totalidad y es parte activa de la gestión
+              empresarial.
+              <br><br>
+              Es importante responder con sinceridad y objetividad, ya que este diagnóstico servirá de base para
+              identificar oportunidades de mejora y orientar futuras acciones de fortalecimiento empresarial.
+
+            </p>
+          </div>
+
+        </div>
+      </div>
+      <div class="row my-3">
+        <div class="col-12">
+          <h3>Selecciona entre las siguientes 2 áreas: </h3>
+        </div>
+
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
+              type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Contabilidad y Finanzas</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
+              type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Capital Humano</button>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
+            tabindex="0">
+            <div class="row">
+              <div class="col-12 my-3">
+                <h4>Contabilidad y Finanzas</h4>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem minima pariatur consequatur ad ab delectus dolorum ullam perspiciatis, saepe rerum.</p>
+                <form id="formularioUno">
+
                 </form>
               </div>
             </div>
-          </nav>
-    </header>
+          </div>
+          <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+            ...uu
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
 
 
-    <main>
-        <section class="container my-5">
-            <div class="row">
-                <div class="col-12 col-md-5">
-                    <img src="./img/mascota.webp" alt="" class="img-fluid">
-                </div>
-                <div class="col-12 col-md-7 align-self-center">
-                    <div class="alert alert-success" role="alert">
-                        <p>
-                            Esta sección del diagnóstico busca evaluar diferentes aspectos estratégicos, operativos y financieros de su empresa mediante una serie de afirmaciones. Para cada afirmación, seleccione el nivel que mejor representa la situación actual de su organización, usando una escala del 1 al 4:
 
-                            1 - No aplica: La afirmación no es relevante para su empresa.
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+    crossorigin="anonymous"></script>
 
-                            2 - Bajo cumplimiento: La empresa apenas ha iniciado o tiene grandes falencias en este aspecto.
-
-                            3 - Cumplimiento parcial: Existen avances importantes, pero aún no se consolida completamente.
-
-                            4 - Cumplimiento alto: La afirmación se cumple en su totalidad y es parte activa de la gestión empresarial.
-
-                            Es importante responder con sinceridad y objetividad, ya que este diagnóstico servirá de base para identificar oportunidades de mejora y orientar futuras acciones de fortalecimiento empresarial.
-
-                        </p>
-                      </div>
-                      
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-12 col-md-9">
-                    <form class="border rounded p-4 shadow">
-      
-                        <h4 class="mt-5 mb-3">Sección 5 Contabilidad y Finanzas</h4>
-                        
-                        <div class="mb-3">
-                            <label class="form-label">5.1 El sistema de contabilidad y costos provee información confiable, suficiente, oportuna y precisa para la toma de decisiones.</label>
-                            <select class="form-select" name="item_5_1">
-                              <option disabled selected>Seleccione una opción</option>
-                              <option value="1">1 - No aplica</option>
-                              <option value="2">2 - Bajo cumplimiento</option>
-                              <option value="3">3 - Cumplimiento parcial</option>
-                              <option value="4">4 - Cumplimiento alto</option>
-                            </select>
-                            <div class="alert alert-danger mt-2" role="alert">
-                              Esta pregunta evalúa si la información contable está disponible a tiempo y es útil para tomar decisiones. Considere si su empresa realiza reportes periódicos y los analiza.
-                            </div>
-                          </div>
-                            
-                            <div class="mb-3">
-                              <label class="form-label">5.2 La Gerencia General recibe los informes contables oportunamente y realiza la evaluación de los mismos.</label>
-                              <select class="form-select" name="item_5_2">
-                                <option disabled selected>Seleccione una opción</option>
-                                <option value="1">1 - No aplica</option>
-                                <option value="2">2 - Bajo cumplimiento</option>
-                                <option value="3">3 - Cumplimiento parcial</option>
-                                <option value="4">4 - Cumplimiento alto</option>
-                              </select>
-                            </div>
-                            
-                            <div class="mb-3">
-                              <label class="form-label">5.3 Periódicamente (mensualmente) se preparan reportes de cuentas por cobrar, organizados por períodos de antigüedad.</label>
-                              <select class="form-select" name="item_5_3">
-                                <option disabled selected>Seleccione una opción</option>
-                                <option value="1">1 - No aplica</option>
-                                <option value="2">2 - Bajo cumplimiento</option>
-                                <option value="3">3 - Cumplimiento parcial</option>
-                                <option value="4">4 - Cumplimiento alto</option>
-                              </select>
-                            </div>
-                            
-                            <div class="mb-3">
-                              <label class="form-label">5.4 De acuerdo con la Ley 1314 de 2009 la empresa tiene implementado en su sistema contable</label>
-                              <select class="form-select" name="item_5_4">
-                                <option disabled selected>Seleccione una opción</option>
-                                <option value="1">1 - No aplica</option>
-                                <option value="2">2 - Bajo cumplimiento</option>
-                                <option value="3">3 - Cumplimiento parcial</option>
-                                <option value="4">4 - Cumplimiento alto</option>
-                              </select>
-                            </div>
-                            
-                            <div class="mb-3">
-                              <label class="form-label">5.5 La empresa tiene establecida una política de compras en relación a:  valor de la compra, plazos de pago, proveedores etc.</label>
-                              <select class="form-select" name="item_5_5">
-                                <option disabled selected>Seleccione una opción</option>
-                                <option value="1">1 - No aplica</option>
-                                <option value="2">2 - Bajo cumplimiento</option>
-                                <option value="3">3 - Cumplimiento parcial</option>
-                                <option value="4">4 - Cumplimiento alto</option>
-                              </select>
-                            </div>
-                            
-                            <div class="mb-3">
-                              <label class="form-label">5.6 La empresa realiza periódicamente revisorías - auditorias.</label>
-                              <select class="form-select" name="item_5_6">
-                                <option disabled selected>Seleccione una opción</option>
-                                <option value="1">1 - No aplica</option>
-                                <option value="2">2 - Bajo cumplimiento</option>
-                                <option value="3">3 - Cumplimiento parcial</option>
-                                <option value="4">4 - Cumplimiento alto</option>
-                              </select>
-                            </div>
-                            
-                            <div class="mb-3">
-                              <label class="form-label">5.7 El sistema de costos de la empresa puede costear rápidamente solicitudes de prestación de productor o servicios, para el mercado nacional o internacional, con base en datos confiables. </label>
-                              <select class="form-select" name="item_5_7">
-                                <option disabled selected>Seleccione una opción</option>
-                                <option value="1">1 - No aplica</option>
-                                <option value="2">2 - Bajo cumplimiento</option>
-                                <option value="3">3 - Cumplimiento parcial</option>
-                                <option value="4">4 - Cumplimiento alto</option>
-                              </select>
-                            </div>
-                            
-                            <div class="mb-3">
-                              <label class="form-label">5.8 La empresa tiene una planeación financiera formal  (presupuestos de ingresos y egresos, flujos de caja,  razones financieras, punto de equilibrio, etc.).</label>
-                              <select class="form-select" name="item_5_8">
-                                <option disabled selected>Seleccione una opción</option>
-                                <option value="1">1 - No aplica</option>
-                                <option value="2">2 - Bajo cumplimiento</option>
-                                <option value="3">3 - Cumplimiento parcial</option>
-                                <option value="4">4 - Cumplimiento alto</option>
-                              </select>
-                            </div>
-                            
-                            <div class="mb-3">
-                              <label class="form-label">5.9 La empresa hace seguimiento a los indicadores financieros (liquidez, actividad, endeudamiento, rendimiento, crecimiento, etc.,)</label>
-                              <select class="form-select" name="item_5_9">
-                                <option disabled selected>Seleccione una opción</option>
-                                <option value="1">1 - No aplica</option>
-                                <option value="2">2 - Bajo cumplimiento</option>
-                                <option value="3">3 - Cumplimiento parcial</option>
-                                <option value="4">4 - Cumplimiento alto</option>
-                              </select>
-                            </div>
-                            
-                            <div class="mb-3">
-                              <label class="form-label">5.10 La empresa realiza regularmente proyecciones de las necesidades o excedentes de la tesorería</label>
-                              <select class="form-select" name="item_5_10">
-                                <option disabled selected>Seleccione una opción</option>
-                                <option value="1">1 - No aplica</option>
-                                <option value="2">2 - Bajo cumplimiento</option>
-                                <option value="3">3 - Cumplimiento parcial</option>
-                                <option value="4">4 - Cumplimiento alto</option>
-                              </select>
-                            </div>
-                            
-                            <div class="mb-3">
-                              <label class="form-label">5.11 Se comparan mensualmente los resultados financieros con los presupuestos,  se analizan las variaciones y se toman acciones correctivas</label>
-                              <select class="form-select" name="item_5_11">
-                                <option disabled selected>Seleccione una opción</option>
-                                <option value="1">1 - No aplica</option>
-                                <option value="2">2 - Bajo cumplimiento</option>
-                                <option value="3">3 - Cumplimiento parcial</option>
-                                <option value="4">4 - Cumplimiento alto</option>
-                              </select>
-                            </div>
-                            
-                            <div class="mb-3">
-                              <label class="form-label">5.12 La empresa conoce y controla el costo y margen de contribución de cada tipo o línea de producto</label>
-                              <select class="form-select" name="item_5_12">
-                                <option disabled selected>Seleccione una opción</option>
-                                <option value="1">1 - No aplica</option>
-                                <option value="2">2 - Bajo cumplimiento</option>
-                                <option value="3">3 - Cumplimiento parcial</option>
-                                <option value="4">4 - Cumplimiento alto</option>
-                              </select>
-                            </div>
-                            
-                            <div class="mb-3">
-                              <label class="form-label">5.13 La empresa evalúa la rentabilidad de sus inversiones en equipo, otros activos fijos y en general de sus inversiones</label>
-                              <select class="form-select" name="item_5_13">
-                                <option disabled selected>Seleccione una opción</option>
-                                <option value="1">1 - No aplica</option>
-                                <option value="2">2 - Bajo cumplimiento</option>
-                                <option value="3">3 - Cumplimiento parcial</option>
-                                <option value="4">4 - Cumplimiento alto</option>
-                              </select>
-                            </div>
-                            
-                            <div class="mb-3">
-                              <label class="form-label">5.14 La empresa conoce y controla las inversiones en capital de trabajo neto operativo</label>
-                              <select class="form-select" name="item_5_14">
-                                <option disabled selected>Seleccione una opción</option>
-                                <option value="1">1 - No aplica</option>
-                                <option value="2">2 - Bajo cumplimiento</option>
-                                <option value="3">3 - Cumplimiento parcial</option>
-                                <option value="4">4 - Cumplimiento alto</option>
-                              </select>
-                            </div>
-                            
-                            <div class="mb-3">
-                              <label class="form-label">5.15 La empresa evalúa su capacidad de endeudamiento y sus opciones de financiación.</label>
-                              <select class="form-select" name="item_5_15">
-                                <option disabled selected>Seleccione una opción</option>
-                                <option value="1">1 - No aplica</option>
-                                <option value="2">2 - Bajo cumplimiento</option>
-                                <option value="3">3 - Cumplimiento parcial</option>
-                                <option value="4">4 - Cumplimiento alto</option>
-                              </select>
-                            </div>
-                            
-                            <div class="mb-3">
-                              <label class="form-label">5.16 Los libros de actas, los registro de  socios, las reformas de escrituras, la  información para las superintendencias se encuentran al día y están debidamente archivados.</label>
-                              <select class="form-select" name="item_5_16">
-                                <option disabled selected>Seleccione una opción</option>
-                                <option value="1">1 - No aplica</option>
-                                <option value="2">2 - Bajo cumplimiento</option>
-                                <option value="3">3 - Cumplimiento parcial</option>
-                                <option value="4">4 - Cumplimiento alto</option>
-                              </select>
-                            </div>
-                            
-                            <div class="mb-3">
-                              <label class="form-label">5.17 Se ha evaluado la inscripción de la empresa ante la Superintendencia de  Industria y Comercio, Cámara de Comercio y la DIAN a la luz de su objeto social.</label>
-                              <select class="form-select" name="item_5_17">
-                                <option disabled selected>Seleccione una opción</option>
-                                <option value="1">1 - No aplica</option>
-                                <option value="2">2 - Bajo cumplimiento</option>
-                                <option value="3">3 - Cumplimiento parcial</option>
-                                <option value="4">4 - Cumplimiento alto</option>
-                              </select>
-                            </div>
-                            
-                            <div class="mb-3">
-                              <label class="form-label">5.18 La empresa tiene una planificación tributaria definida,  conoce los montos aproximados por pagar en el período gravable de los diferentes impuestos, tasas y contribuciones.</label>
-                              <select class="form-select" name="item_5_18">
-                                <option disabled selected>Seleccione una opción</option>
-                                <option value="1">1 - No aplica</option>
-                                <option value="2">2 - Bajo cumplimiento</option>
-                                <option value="3">3 - Cumplimiento parcial</option>
-                                <option value="4">4 - Cumplimiento alto</option>
-                              </select>
-                            </div>
-                            
-                            <div class="mb-3">
-                              <label class="form-label">5.19 La empresa tiene establecidas practicas que minimizan la probabilidad de riesgos financieros</label>
-                              <select class="form-select" name="item_5_19">
-                                <option disabled selected>Seleccione una opción</option>
-                                <option value="1">1 - No aplica</option>
-                                <option value="2">2 - Bajo cumplimiento</option>
-                                <option value="3">3 - Cumplimiento parcial</option>
-                                <option value="4">4 - Cumplimiento alto</option>
-                              </select>
-                            </div>
-                            
-                        <h4 class="mt-5 mb-3">Sección 6</h4>
-                        
-                            <div class="mb-3">
-                              <label class="form-label">6.1 La empresa tiene un organigrama  escrito e implementado donde las líneas de autoridad y responsabilidad están claramente definidas.</label>
-                              <select class="form-select" name="item_6_1">
-                                <option disabled selected>Seleccione una opción</option>
-                                <option value="1">1 - No aplica</option>
-                                <option value="2">2 - Bajo cumplimiento</option>
-                                <option value="3">3 - Cumplimiento parcial</option>
-                                <option value="4">4 - Cumplimiento alto</option>
-                              </select>
-                            </div>
-                            
-                            <div class="mb-3">
-                              <label class="form-label">6.2 La empresa cuenta con políticas de GTH (Remuneración e incentivos, Selección vinculación del personal, promoción y proyección del personal, gestión por competencias)</label>
-                              <select class="form-select" name="item_6_2">
-                                <option disabled selected>Seleccione una opción</option>
-                                <option value="1">1 - No aplica</option>
-                                <option value="2">2 - Bajo cumplimiento</option>
-                                <option value="3">3 - Cumplimiento parcial</option>
-                                <option value="4">4 - Cumplimiento alto</option>
-                              </select>
-                            </div>
-                            
-                            <div class="mb-3">
-                              <label class="form-label">6.3 La empresa tiene documentado y aplica los procesos de gestión del talento humano (descripción de cargos, manuales de responsabilidades y  procedimientos escritos)</label>
-                              <select class="form-select" name="item_6_3">
-                                <option disabled selected>Seleccione una opción</option>
-                                <option value="1">1 - No aplica</option>
-                                <option value="2">2 - Bajo cumplimiento</option>
-                                <option value="3">3 - Cumplimiento parcial</option>
-                                <option value="4">4 - Cumplimiento alto</option>
-                              </select>
-                            </div>
-                            
-                            <div class="mb-3">
-                              <label class="form-label">6.4 La empresa lleva a cabo un proceso técnico de selección, vinculación y contratación del talento humano (proceso interno o tercerizado)</label>
-                              <select class="form-select" name="item_6_4">
-                                <option disabled selected>Seleccione una opción</option>
-                                <option value="1">1 - No aplica</option>
-                                <option value="2">2 - Bajo cumplimiento</option>
-                                <option value="3">3 - Cumplimiento parcial</option>
-                                <option value="4">4 - Cumplimiento alto</option>
-                              </select>
-                            </div>
-                            
-                            <div class="mb-3">
-                              <label class="form-label">6.5 La empresa cumple con todos los requisitos legales vigentes.  (Seguridad Social, SENA, caja de compensación, reglamento de trabajo,  reglamento de  salud e higiene en el trabajo, etc.)</label>
-                              <select class="form-select" name="item_6_5">
-                                <option disabled selected>Seleccione una opción</option>
-                                <option value="1">1 - No aplica</option>
-                                <option value="2">2 - Bajo cumplimiento</option>
-                                <option value="3">3 - Cumplimiento parcial</option>
-                                <option value="4">4 - Cumplimiento alto</option>
-                              </select>
-                            </div>
-                            
-                            <div class="mb-3">
-                              <label class="form-label">6.6 La empresa tiene un programa definido para la capacitación de todo su personal y al personal nuevo se le da una inducción a la empresa.</label>
-                              <select class="form-select" name="item_6_6">
-                                <option disabled selected>Seleccione una opción</option>
-                                <option value="1">1 - No aplica</option>
-                                <option value="2">2 - Bajo cumplimiento</option>
-                                <option value="3">3 - Cumplimiento parcial</option>
-                                <option value="4">4 - Cumplimiento alto</option>
-                              </select>
-                            </div>
-                            
-                            <div class="mb-3">
-                              <label class="form-label">6.7 La empresa tiene establecido un programa de promoción y proyección profesional para el personal de la empresa</label>
-                              <select class="form-select" name="item_6_7">
-                                <option disabled selected>Seleccione una opción</option>
-                                <option value="1">1 - No aplica</option>
-                                <option value="2">2 - Bajo cumplimiento</option>
-                                <option value="3">3 - Cumplimiento parcial</option>
-                                <option value="4">4 - Cumplimiento alto</option>
-                              </select>
-                            </div>
-                            
-                            <div class="mb-3">
-                              <label class="form-label">6.8 Las habilidades personales, las calificaciones, el deseo de superación, la creatividad y la productividad  son criterios claves para la remuneración y promoción del personal, así como para la definición de la escala salarial. </label>
-                              <select class="form-select" name="item_6_8">
-                                <option disabled selected>Seleccione una opción</option>
-                                <option value="1">1 - No aplica</option>
-                                <option value="2">2 - Bajo cumplimiento</option>
-                                <option value="3">3 - Cumplimiento parcial</option>
-                                <option value="4">4 - Cumplimiento alto</option>
-                              </select>
-                            </div>
-                            
-                            <div class="mb-3">
-                              <label class="form-label">6.9 La empresa realiza permanentemente seguimiento y evaluación del desempeño del talento humano, a fin de establecer los planes de mejora y orientar los programas de capacitación</label>
-                              <select class="form-select" name="item_6_9">
-                                <option disabled selected>Seleccione una opción</option>
-                                <option value="1">1 - No aplica</option>
-                                <option value="2">2 - Bajo cumplimiento</option>
-                                <option value="3">3 - Cumplimiento parcial</option>
-                                <option value="4">4 - Cumplimiento alto</option>
-                              </select>
-                            </div>
-                            
-                            <div class="mb-3">
-                              <label class="form-label">6.10 Existe una buena comunicación oral y escrita a través de los diferentes niveles de la empresa</label>
-                              <select class="form-select" name="item_6_10">
-                                <option disabled selected>Seleccione una opción</option>
-                                <option value="1">1 - No aplica</option>
-                                <option value="2">2 - Bajo cumplimiento</option>
-                                <option value="3">3 - Cumplimiento parcial</option>
-                                <option value="4">4 - Cumplimiento alto</option>
-                              </select>
-                            </div>
-                            
-                            <div class="mb-3">
-                              <label class="form-label">6.11 La empresa  logra que el personal desarrolle un sentido de pertenencia. </label>
-                              <select class="form-select" name="item_6_11">
-                                <option disabled selected>Seleccione una opción</option>
-                                <option value="1">1 - No aplica</option>
-                                <option value="2">2 - Bajo cumplimiento</option>
-                                <option value="3">3 - Cumplimiento parcial</option>
-                                <option value="4">4 - Cumplimiento alto</option>
-                              </select>
-                            </div>
-                            
-                            <div class="mb-3">
-                              <label class="form-label">6.12 El trabajo en equipo es estimulado a través de todos los niveles de la empresa. </label>
-                              <select class="form-select" name="item_6_12">
-                                <option disabled selected>Seleccione una opción</option>
-                                <option value="1">1 - No aplica</option>
-                                <option value="2">2 - Bajo cumplimiento</option>
-                                <option value="3">3 - Cumplimiento parcial</option>
-                                <option value="4">4 - Cumplimiento alto</option>
-                              </select>
-                            </div>
-                            
-                            <div class="mb-3">
-                              <label class="form-label">6.13 La empresa ha establecido programas e incentivos para mejorar el clima laboral.</label>
-                              <select class="form-select" name="item_6_13">
-                                <option disabled selected>Seleccione una opción</option>
-                                <option value="1">1 - No aplica</option>
-                                <option value="2">2 - Bajo cumplimiento</option>
-                                <option value="3">3 - Cumplimiento parcial</option>
-                                <option value="4">4 - Cumplimiento alto</option>
-                              </select>
-                            </div>
-                            
-                            <div class="mb-3">
-                              <label class="form-label">6.14 La empresa realiza frecuentemente actividades sociales, recreativas y deportivas  y busca vincular a la familia del trabajador en estos eventos.</label>
-                              <select class="form-select" name="item_6_14">
-                                <option disabled selected>Seleccione una opción</option>
-                                <option value="1">1 - No aplica</option>
-                                <option value="2">2 - Bajo cumplimiento</option>
-                                <option value="3">3 - Cumplimiento parcial</option>
-                                <option value="4">4 - Cumplimiento alto</option>
-                              </select>
-                            </div>
-                            
-                        <h4 class="mt-5 mb-3">Sección 7</h4>
-                        
-                            <div class="mb-3">
-                              <label class="form-label">7.1 En la prestación de los servicios la empresa tiene en cuenta las regulaciones ambientales y el bienestar de sus trabajadores. </label>
-                              <select class="form-select" name="item_7_1">
-                                <option disabled selected>Seleccione una opción</option>
-                                <option value="1">1 - No aplica</option>
-                                <option value="2">2 - Bajo cumplimiento</option>
-                                <option value="3">3 - Cumplimiento parcial</option>
-                                <option value="4">4 - Cumplimiento alto</option>
-                              </select>
-                            </div>
-                            
-                            <div class="mb-3">
-                              <label class="form-label">7.2 La empresa conoce las normas ambientales que la controlan  y establece los procedimientos y procesos para cumplirlas. </label>
-                              <select class="form-select" name="item_7_2">
-                                <option disabled selected>Seleccione una opción</option>
-                                <option value="1">1 - No aplica</option>
-                                <option value="2">2 - Bajo cumplimiento</option>
-                                <option value="3">3 - Cumplimiento parcial</option>
-                                <option value="4">4 - Cumplimiento alto</option>
-                              </select>
-                            </div>
-                            
-                            <div class="mb-3">
-                              <label class="form-label">7.3 La cultura y la estrategia de la empresa involucra aspectos, impactos y  riesgos ambientales.</label>
-                              <select class="form-select" name="item_7_3">
-                                <option disabled selected>Seleccione una opción</option>
-                                <option value="1">1 - No aplica</option>
-                                <option value="2">2 - Bajo cumplimiento</option>
-                                <option value="3">3 - Cumplimiento parcial</option>
-                                <option value="4">4 - Cumplimiento alto</option>
-                              </select>
-                            </div>
-                            
-                            <div class="mb-3">
-                              <label class="form-label">7.4 La empresa mide el desempeño ambiental frente a metas y estándares predefinidos. </label>
-                              <select class="form-select" name="item_7_4">
-                                <option disabled selected>Seleccione una opción</option>
-                                <option value="1">1 - No aplica</option>
-                                <option value="2">2 - Bajo cumplimiento</option>
-                                <option value="3">3 - Cumplimiento parcial</option>
-                                <option value="4">4 - Cumplimiento alto</option>
-                              </select>
-                            </div>
-                            
-                            <div class="mb-3">
-                              <label class="form-label">7.5 La empresa considera las regulaciones ambientales cuando desarrolla nuevos servicios, o realiza cambios en su infraestructura física. </label>
-                              <select class="form-select" name="item_7_5">
-                                <option disabled selected>Seleccione una opción</option>
-                                <option value="1">1 - No aplica</option>
-                                <option value="2">2 - Bajo cumplimiento</option>
-                                <option value="3">3 - Cumplimiento parcial</option>
-                                <option value="4">4 - Cumplimiento alto</option>
-                              </select>
-                            </div>
-                            
-                            <div class="mb-3">
-                              <label class="form-label">7.6 Para la selección, instalación, operación y mantenimiento de los equipos se tiene en cuenta consideraciones ambientales, además de los aspectos técnicos y económicos.</label>
-                              <select class="form-select" name="item_7_6">
-                                <option disabled selected>Seleccione una opción</option>
-                                <option value="1">1 - No aplica</option>
-                                <option value="2">2 - Bajo cumplimiento</option>
-                                <option value="3">3 - Cumplimiento parcial</option>
-                                <option value="4">4 - Cumplimiento alto</option>
-                              </select>
-                            </div>
-                            
-                            <div class="mb-3">
-                              <label class="form-label">7.7 Se definen y documentan las tareas, responsabilidades, competencias y procedimientos específicos que aseguren el cumplimiento de las normas ambientales, tanto internas como externas.</label>
-                              <select class="form-select" name="item_7_7">
-                                <option disabled selected>Seleccione una opción</option>
-                                <option value="1">1 - No aplica</option>
-                                <option value="2">2 - Bajo cumplimiento</option>
-                                <option value="3">3 - Cumplimiento parcial</option>
-                                <option value="4">4 - Cumplimiento alto</option>
-                              </select>
-                            </div>
-                            
-                            <div class="mb-3">
-                              <label class="form-label">7.8 La empresa trata de minimizar el consumo de energía, agua y materias primas contaminantes mediante la mejora de sus procesos de prestación de servicios, el reciclaje, la sustitución de insumos, el mantenimiento preventivo y el uso de otras tecnologías.</label>
-                              <select class="form-select" name="item_7_8">
-                                <option disabled selected>Seleccione una opción</option>
-                                <option value="1">1 - No aplica</option>
-                                <option value="2">2 - Bajo cumplimiento</option>
-                                <option value="3">3 - Cumplimiento parcial</option>
-                                <option value="4">4 - Cumplimiento alto</option>
-                              </select>
-                            </div>
-                            
-                            <div class="mb-3">
-                              <label class="form-label">7.9 La empresa ha medido la cuantía del desperdicio, sabe en qué etapa del proceso es generado y ha formulado planes para reducirlo.</label>
-                              <select class="form-select" name="item_7_9">
-                                <option disabled selected>Seleccione una opción</option>
-                                <option value="1">1 - No aplica</option>
-                                <option value="2">2 - Bajo cumplimiento</option>
-                                <option value="3">3 - Cumplimiento parcial</option>
-                                <option value="4">4 - Cumplimiento alto</option>
-                              </select>
-                            </div>
-                            
-                        <h4 class="mt-5 mb-3">Sección 8</h4>
-                        
-                            <div class="mb-3">
-                              <label class="form-label">8.1 El sistema de información de la empresa está diseñado para satisfacer los requerimientos funcionales de información de la Gerencia General y de todos los departamentos en forma oportuna y confiable. </label>
-                              <select class="form-select" name="item_8_1">
-                                <option disabled selected>Seleccione una opción</option>
-                                <option value="1">1 - No aplica</option>
-                                <option value="2">2 - Bajo cumplimiento</option>
-                                <option value="3">3 - Cumplimiento parcial</option>
-                                <option value="4">4 - Cumplimiento alto</option>
-                              </select>
-                            </div>
-                            
-                            <div class="mb-3">
-                              <label class="form-label">8.2 La empresa está actualizada en materia de nuevos desarrollos en programas y equipos de cómputo  y tiene el personal capacitado para manejarlos.</label>
-                              <select class="form-select" name="item_8_2">
-                                <option disabled selected>Seleccione una opción</option>
-                                <option value="1">1 - No aplica</option>
-                                <option value="2">2 - Bajo cumplimiento</option>
-                                <option value="3">3 - Cumplimiento parcial</option>
-                                <option value="4">4 - Cumplimiento alto</option>
-                              </select>
-                            </div>
-                            
-                            <div class="mb-3">
-                              <label class="form-label">8.3 El diseño técnico y funcional del sistema responde a las necesidades de información de la empresa y es óptimo con relación al tiempo de proceso y seguridad. </label>
-                              <select class="form-select" name="item_8_3">
-                                <option disabled selected>Seleccione una opción</option>
-                                <option value="1">1 - No aplica</option>
-                                <option value="2">2 - Bajo cumplimiento</option>
-                                <option value="3">3 - Cumplimiento parcial</option>
-                                <option value="4">4 - Cumplimiento alto</option>
-                              </select>
-                            </div>
-                            
-                            <div class="mb-3">
-                              <label class="form-label">8.4 Se generan y archivan adecuadamente los documentos de soporte</label>
-                              <select class="form-select" name="item_8_4">
-                                <option disabled selected>Seleccione una opción</option>
-                                <option value="1">1 - No aplica</option>
-                                <option value="2">2 - Bajo cumplimiento</option>
-                                <option value="3">3 - Cumplimiento parcial</option>
-                                <option value="4">4 - Cumplimiento alto</option>
-                              </select>
-                            </div>
-                            
-                            <div class="mb-3">
-                              <label class="form-label">8.5 La captura de información genera operaciones simultáneas en las diferentes áreas de la empresa evitando la doble digitación de las transacciones en los diferentes sistemas.</label>
-                              <select class="form-select" name="item_8_5">
-                                <option disabled selected>Seleccione una opción</option>
-                                <option value="1">1 - No aplica</option>
-                                <option value="2">2 - Bajo cumplimiento</option>
-                                <option value="3">3 - Cumplimiento parcial</option>
-                                <option value="4">4 - Cumplimiento alto</option>
-                              </select>
-                            </div>
-                            
-                            <div class="mb-3">
-                              <label class="form-label">8.6 Como política, la empresa realiza sistemáticamente copias de respaldo (back-ups) de sus archivos más importantes y los almacena en sitios seguros.  </label>
-                              <select class="form-select" name="item_8_6">
-                                <option disabled selected>Seleccione una opción</option>
-                                <option value="1">1 - No aplica</option>
-                                <option value="2">2 - Bajo cumplimiento</option>
-                                <option value="3">3 - Cumplimiento parcial</option>
-                                <option value="4">4 - Cumplimiento alto</option>
-                              </select>
-                            </div>
-                            
-                            <div class="mb-3">
-                              <label class="form-label">8.7 Existen procedimientos de contingencia, manuales o automatizados, en caso de perdidas de fluido eléctrico o fallas en el equipo de proceso.</label>
-                              <select class="form-select" name="item_8_7">
-                                <option disabled selected>Seleccione una opción</option>
-                                <option value="1">1 - No aplica</option>
-                                <option value="2">2 - Bajo cumplimiento</option>
-                                <option value="3">3 - Cumplimiento parcial</option>
-                                <option value="4">4 - Cumplimiento alto</option>
-                              </select>
-                            </div>
-                            
-                            <div class="mb-3">
-                              <label class="form-label">8.8 La información generada por el sistema es confiable, oportuna, clara y útil y es usada para la toma de decisiones.</label>
-                              <select class="form-select" name="item_8_8">
-                                <option disabled selected>Seleccione una opción</option>
-                                <option value="1">1 - No aplica</option>
-                                <option value="2">2 - Bajo cumplimiento</option>
-                                <option value="3">3 - Cumplimiento parcial</option>
-                                <option value="4">4 - Cumplimiento alto</option>
-                              </select>
-                            </div>
-                            
-                            <div class="mb-3">
-                              <label class="form-label">8.9 La Gerencia ha definido reportes que indiquen el tipo de datos requeridos para el proceso de toma de decisiones.</label>
-                              <select class="form-select" name="item_8_9">
-                                <option disabled selected>Seleccione una opción</option>
-                                <option value="1">1 - No aplica</option>
-                                <option value="2">2 - Bajo cumplimiento</option>
-                                <option value="3">3 - Cumplimiento parcial</option>
-                                <option value="4">4 - Cumplimiento alto</option>
-                              </select>
-                            </div>
-                            
-                          <div class="mb-3">
-                            <label for="comentarios" class="form-label">Comentarios o acciones de mejora generales</label>
-                            <textarea class="form-control" id="comentarios" rows="4"></textarea>
-                          </div>
-                          <a href="./competitividad.html" class="btn btn-primary">Enviar valoración</a>
-                        </form>
-                </div>
-            </div>
-        </section>
-    </main>
-    
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+  <script src="./ControladorUno.js" type="module"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
+
 </html>

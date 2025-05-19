@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diagnostico</title>
+    <link rel="stylesheet" href="./estilos.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
 </head>
 <body>
@@ -11,11 +12,20 @@
     <main>
 
         <section class="container my-3">
-            <div class="row justify-content-center">
-                <div class="col-12 col-md-9">
-                    <h1 class="text-center my-2">Plataforma de diagnostico empresarial</h1>
-                    <p class="text-center my-3">Esta herramienta te permitirá evaluar el estado actual de tu organización en distintas dimensiones clave para su crecimiento. El proceso es simple: regístrate, completa la información solicitada y accede a un diagnóstico personalizado para tu empresa</p>
+          <div class="row">
+            <div class="col-12 col-md-10">
+              <h1 class="text-start my-2">Plataforma de diagnóstico empresarial</h1>
+                    <p class="text-start my-3">Esta herramienta te permitirá evaluar el estado actual de tu organización en distintas dimensiones clave para su crecimiento. El proceso es simple: regístrate, completa la información solicitada y accede a un diagnóstico personalizado para tu empresa</p>
                     <br>
+            </div>
+            <div class="col-12 col-md-2">
+                <img src="./img/logoitm.png" alt="logo" class="img-fluid">
+            </div>
+          </div>
+
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-12">
+                    
                     <form class="shadow border rounded p-3">
                         <!-- Fila 1: Información de la empresa -->
                         <div class="row mb-3">
@@ -24,8 +34,22 @@
                             <input type="text" class="form-control" id="empresa" required>
                           </div>
                           <div class="col-md-6">
-                            <label for="sector" class="form-label">Sector o industria</label>
-                            <input type="text" class="form-control" id="sector">
+                            <label for="sector" class="form-label">Sector en que se ubica la empresa</label>
+                            <select class="form-select" id="sector">
+                              <option selected disabled>Seleccione un sector</option>
+                              <option>1. Textil y Confecciones</option>
+                              <option>2. Flores</option>
+                              <option>3. Calzado, Cueros y Manufactura</option>
+                              <option>4. Servicios y Software</option>
+                              <option>5. Autopartes</option>
+                              <option>6. Agroindustrial</option>
+                              <option>7. Metalurgia y Metalmecánica</option>
+                              <option>8. Regalos y Artesanías</option>
+                              <option>9. Pecuario y Avícola</option>
+                              <option>10. Agrícola</option>
+                              <option>11. Editorial y Artes Gráficas</option>
+                              <!-- Puedes seguir agregando más si hay otros sectores -->
+                    </select>
                           </div>
                         </div>
                 
@@ -94,9 +118,13 @@
                       </form>
                 </div>
             </div>
-            <div class="row justify-content-center my-2">
+            
+        </section>
+
+        <section class="container-fluid">
+          <div class="row justify-content-center my-2 fondogris p-4">
                 <div class="col-12 col-md-4">
-                    <img src="./img/logoitm.png" alt="logo" class="img-fluid">
+                    <img src="./img/fondoindex.png" alt="" class="img-fluid">
                 </div>
             </div>
         </section>
