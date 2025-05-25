@@ -1,12 +1,45 @@
-.menu{
-    background-color: #003863;
+body {
+    font-family: 'Montserrat', sans-serif;
 }
 
-.btn.btn-primary{
-     background-color: #003863 !important;
-    border-color: #003863 !important;
+/* Menú superior o encabezado */
+.menu {
+    background-color: #011C5B; /* Azul ITM */
 }
 
-.fondogris{
-    background-color: #D3D3D3;
+/* Botones principales */
+.btn.btn-primary {
+    background-color: #011C5B !important;
+    border-color: #011C5B !important;
+    color: white;
+}
+
+/* Botón al pasar el mouse */
+/*.btn.btn-primary:hover {
+    background-color: #000000 !important; 
+    border-color: #000000 !important;
+}*/
+
+/* Fondos suaves (fondogris) */
+.fondogris {
+    background-color: #C6C6C6; /* Gris ITM */
+}
+.fondoazul{
+     background-color: #011C5B !important;
+}
+
+/* Títulos y textos */
+h1, h2, h3 {
+    color: #F19800 !important; /* Azul ITM */
+    font-weight: 700;
+}
+
+h4, h5, h6, label, p {
+    color: #011C5B; /* Azul ITM */
+}
+
+/* Input activo o enfocado */
+.form-control:focus, .form-select:focus {
+    border-color: #011C5B;
+    box-shadow: 0 0 0 0.2rem rgba(1, 28, 91, 0.25); /* sombra azul ITM */
 }

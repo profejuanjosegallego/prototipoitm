@@ -2,16 +2,15 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Diagnostico</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diagnóstico</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-  <link rel="stylesheet" href="./estilos.css">
+    integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./estilos.css" />
 </head>
 
 <body>
-
   <header>
     <nav class="navbar navbar-expand-lg menu navbar-dark">
       <div class="container-fluid">
@@ -19,58 +18,55 @@
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <!-- Grupo izquierdo -->
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="./home.html">Areas</a>
-            </li>
             <li class="nav-item">
               <a class="nav-link active" href="./valoracion.html">Valoración</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="./competitividad.html">Mapa de competitividad</a>
             </li>
-            
-
           </ul>
-          <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
+
+          <!-- Grupo derecho -->
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+            <li class="nav-item">
+              <span class="nav-link active" id="nombreUsuarioNavbar"></span>
+            </li>
+            <li class="nav-item">
+              <button class="btn btn-outline-light btn-sm ms-2" id="cerrarSesion">Cerrar sesión</button>
+            </li>
+          </ul>
         </div>
       </div>
     </nav>
   </header>
 
-
   <main>
     <section class="container my-5">
       <div class="row">
-
         <div class="col-12 col-md-12 align-self-center">
           <div class="alert alert-primary" role="alert">
             <p>
               Esta sección del diagnóstico busca evaluar diferentes aspectos estratégicos, operativos y financieros de
               su empresa mediante una serie de afirmaciones. Para cada afirmación, seleccione el nivel que mejor
               representa la situación actual de su organización, usando una escala del 1 al 4:
-              <br><br>
-              1 - No aplica: La afirmación no es relevante para su empresa.
-              <br>
-              2 - Bajo cumplimiento: La empresa apenas ha iniciado o tiene grandes falencias en este aspecto.
-              <br>
-              3 - Cumplimiento parcial: Existen avances importantes, pero aún no se consolida completamente.
-              <br>
+              <br /><br />
+              1 - No aplica: La afirmación no es relevante para su empresa.<br />
+              2 - Bajo cumplimiento: La empresa apenas ha iniciado o tiene grandes falencias en este aspecto.<br />
+              3 - Cumplimiento parcial: Existen avances importantes, pero aún no se consolida completamente.<br />
               4 - Cumplimiento alto: La afirmación se cumple en su totalidad y es parte activa de la gestión
               empresarial.
-              <br><br>
+              <br /><br />
               Es importante responder con sinceridad y objetividad, ya que este diagnóstico servirá de base para
               identificar oportunidades de mejora y orientar futuras acciones de fortalecimiento empresarial.
-
             </p>
           </div>
-
         </div>
       </div>
+
       <div class="row my-3">
         <div class="col-12">
           <h3>Selecciona entre las siguientes 2 áreas: </h3>
@@ -79,28 +75,46 @@
         <ul class="nav nav-tabs" id="myTab" role="tablist">
           <li class="nav-item" role="presentation">
             <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
-              type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Contabilidad y Finanzas</button>
+              type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">
+              Contabilidad y Finanzas
+            </button>
           </li>
           <li class="nav-item" role="presentation">
             <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
-              type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Capital Humano</button>
+              type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">
+              Capital Humano
+            </button>
           </li>
         </ul>
+
         <div class="tab-content" id="myTabContent">
           <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
             tabindex="0">
             <div class="row">
               <div class="col-12 my-3">
                 <h4>Contabilidad y Finanzas</h4>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem minima pariatur consequatur ad ab delectus dolorum ullam perspiciatis, saepe rerum.</p>
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem minima pariatur consequatur ad ab
+                  delectus dolorum ullam perspiciatis, saepe rerum.
+                </p>
                 <form id="formularioUno">
-
+                  <!-- Aquí puedes agregar inputs dinámicos -->
                 </form>
               </div>
             </div>
           </div>
           <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
-            ...uu
+            <div class="row">
+              <div class="col-12 my-3">
+                <h4>Capital Humano</h4>
+                <p>
+                  Evaluación de talento humano, clima laboral y procesos de gestión del conocimiento.
+                </p>
+                <form id="formularioDos">
+                  <!-- Aquí puedes agregar inputs dinámicos -->
+                </form>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -108,14 +122,14 @@
     </section>
   </main>
 
-
-
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
     crossorigin="anonymous"></script>
-
-  <script src="./ControladorUno.js" type="module"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script type="module" src="./controladorlogout.js"></script>
+  <script type="module" src="./ControladorUno.js"></script>
+  <script type="module" src="./ControladorDos.js"></script>
 </body>
 
 </html>

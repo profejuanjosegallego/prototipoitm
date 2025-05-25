@@ -19,24 +19,27 @@
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <!-- Grupo izquierdo -->
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="./home.html">Areas</a>
-            </li>
             <li class="nav-item">
               <a class="nav-link" href="./valoracion.html">Valoración</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" href="./competitividad.html">Mapa de competitividad</a>
             </li>
-            
-
           </ul>
-          <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
+
+          <!-- Grupo derecho -->
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+            <li class="nav-item">
+              <span class="nav-link active" id="nombreUsuarioNavbar"></span>
+            </li>
+            <li class="nav-item">
+              <button class="btn btn-outline-light btn-sm ms-2" id="cerrarSesion">Cerrar sesión</button>
+            </li>
+          </ul>
         </div>
       </div>
     </nav>
@@ -90,12 +93,12 @@
 
       <div class="row my-3">
         <div class="col-12 col-md-6">
-          <h3 class="mt-5">Gráfico de Radar</h3>
+          
           <canvas id="graficoRadar"></canvas>
 
         </div>
         <div class="col-12 col-md-6">
-          <h3 class="mt-5">Gráfico de Barras</h3>
+         
           <canvas id="graficoBarras"></canvas>
         </div>
       </div>
@@ -105,11 +108,9 @@
 
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
   <script type="module" src="./controaldorgraficasUno.js"></script>
-
-
-
+  <script type="module" src="./controladorlogout.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
     crossorigin="anonymous"></script>

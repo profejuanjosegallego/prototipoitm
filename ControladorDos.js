@@ -1,16 +1,17 @@
-import { preguntasFinancieras } from "./valoracionUno.js";
+import { preguntasCapitalHumano } from "./valoracionDos.js";
 
-const formulario = document.getElementById("formularioUno");
+const formulario = document.getElementById("formularioDos");
 
-// Subcategorías dinámicas (si cambias nombres, se actualiza todo)
+// Subcategorías dinámicas
 const subcategorias = [
-  "Monitoreo de Costos y Contabilidad",
-  "Administración Financiera",
-  "Normas Legales y Tributarias"
+  "Aspectos Generales",
+  "Capacitación y Promoción del Personal",
+  "Cultura Organizacional",
+  "Salud y Seguridad en el Trabajo"
 ];
 
 // Renderizar preguntas
-preguntasFinancieras.forEach((pregunta, index) => {
+preguntasCapitalHumano.forEach((pregunta, index) => {
   const grupo = document.createElement("div");
   grupo.className = "mb-3";
 
@@ -79,7 +80,7 @@ formulario.addEventListener("submit", function (e) {
   subcategorias.forEach(sub => resultadosPorSubcategoria[sub] = 0);
 
   // Recorrer y validar
-  preguntasFinancieras.forEach(pregunta => {
+  preguntasCapitalHumano.forEach(pregunta => {
     const valorStr = document.getElementById(`item_${pregunta.id}`).value;
 
     if (valorStr === "") {
@@ -104,8 +105,8 @@ formulario.addEventListener("submit", function (e) {
   console.log("Resultados por subcategoría:", resultadosPorSubcategoria);
 
   // Guardar en sessionStorage
-  sessionStorage.removeItem("valoracionCapitalHumano");
-  sessionStorage.setItem("valoracionFinanciera", JSON.stringify(resultadosPorSubcategoria));
+  sessionStorage.removeItem("valoracionFinanciera");
+  sessionStorage.setItem("valoracionCapitalHumano", JSON.stringify(resultadosPorSubcategoria));
 
   Swal.fire({
     title: "Buen trabajo",

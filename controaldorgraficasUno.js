@@ -1,14 +1,42 @@
-// Leer datos desde sessionStorage
-const resultados = JSON.parse(sessionStorage.getItem("valoracionFinanciera"));
+// Detectar cuál valoración está presente
+const datosFinancieros = JSON.parse(sessionStorage.getItem("valoracionFinanciera"));
+const datosCapitalHumano = JSON.parse(sessionStorage.getItem("valoracionCapitalHumano"));
 
+let resultados = null;
+let tipo = "";
+
+if (datosFinancieros) {
+  resultados = datosFinancieros;
+  tipo = "Financiera";
+} else if (datosCapitalHumano) {
+  resultados = datosCapitalHumano;
+  tipo = "Capital Humano";
+} else {
+  // Si no hay datos, redirige
+  Swal.fire({
+    title: "Sin datos",
+    text: "No se encontró ninguna valoración registrada.",
+    icon: "warning",
+    confirmButtonText: "Volver"
+  }).then(() => {
+    window.location.href = "./valoracion.html";
+  });
+  throw new Error("No hay datos para graficar.");
+}
+
+// DOM Elements
 const cuerpoTabla = document.querySelector("#tablaSubcategorias tbody");
 const etiquetas = [];
 const valores = [];
-
-// Color institucional
 const azulInstitucional = "#003863";
 
-// Construir la tabla
+// Título dinámico (opcional)
+const titulo = document.getElementById("tituloResultado");
+if (titulo) {
+  titulo.textContent = `Resultados: Valoración ${tipo}`;
+}
+
+// Renderizar tabla
 Object.entries(resultados).forEach(([subcategoria, valor]) => {
   const fila = document.createElement("tr");
 
@@ -26,15 +54,15 @@ Object.entries(resultados).forEach(([subcategoria, valor]) => {
   valores.push(valor);
 });
 
-// Gráfico de Radar
+// Gráfico Radar
 new Chart(document.getElementById("graficoRadar"), {
   type: "radar",
   data: {
     labels: etiquetas,
     datasets: [{
-      label: "Resultado por categoría",
+      label: `Resultado por subcategoría (${tipo})`,
       data: valores,
-      backgroundColor: azulInstitucional + "33", // Opacidad baja
+      backgroundColor: azulInstitucional + "33",
       borderColor: azulInstitucional,
       borderWidth: 2,
       pointBackgroundColor: azulInstitucional
@@ -54,13 +82,13 @@ new Chart(document.getElementById("graficoRadar"), {
   }
 });
 
-// Gráfico de Barras
+// Gráfico Barras
 new Chart(document.getElementById("graficoBarras"), {
   type: "bar",
   data: {
     labels: etiquetas,
     datasets: [{
-      label: "Resultado por categoría",
+      label: `Resultado por subcategoría (${tipo})`,
       data: valores,
       backgroundColor: azulInstitucional
     }]
