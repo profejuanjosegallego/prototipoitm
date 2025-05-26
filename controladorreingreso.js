@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     try {
-      const respuesta = await fetch("http://localhost:3000/empresas"); // Cambia a tu URL real en producción
+      const respuesta = await fetch("https://apidiagnostico.vercel.app/empresas"); // Cambia a tu URL real en producción
       const data = await respuesta.json();
 
       const empresas = data.empresas || [];
