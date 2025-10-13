@@ -1,15 +1,19 @@
+// ControladorUno.js
 import { preguntasFinancieras } from "./valoracionUno.js";
 
 const formulario = document.getElementById("formularioUno");
 
-// Subcategorías dinámicas (si cambias nombres, se actualiza todo)
+// Subcategorías de Contabilidad y Finanzas
 const subcategorias = [
   "Monitoreo de Costos y Contabilidad",
   "Administración Financiera",
-  "Normas Legales y Tributarias"
+  "Normas Legales y Tributarias",
 ];
 
-// Renderizar preguntas
+// 🧠 Recuperar progreso previo del usuario (si existe)
+const progresoGuardado = JSON.parse(localStorage.getItem("respuestasFinancieras")) || {};
+
+// Render dinámico de preguntas
 preguntasFinancieras.forEach((pregunta, index) => {
   const grupo = document.createElement("div");
   grupo.className = "mb-3";
@@ -30,62 +34,75 @@ preguntasFinancieras.forEach((pregunta, index) => {
     "1 - No aplica",
     "2 - Bajo cumplimiento",
     "3 - Cumplimiento parcial",
-    "4 - Cumplimiento alto"
+    "4 - Cumplimiento alto",
   ];
 
-  opciones.forEach((opcionTexto, i) => {
+  opciones.forEach((texto, i) => {
     const option = document.createElement("option");
-    option.value = i || ""; // el primero queda vacío
-    option.textContent = opcionTexto;
+    option.value = i || "";
+    option.textContent = texto;
     option.disabled = i === 0;
-    option.selected = i === 0;
     select.appendChild(option);
   });
 
+  // 🔁 Restaurar valor si estaba guardado
+  if (progresoGuardado[`item_${pregunta.id}`]) {
+    select.value = progresoGuardado[`item_${pregunta.id}`];
+  } else {
+    select.selectedIndex = 0;
+  }
+
+  // 💾 Guardar automáticamente al cambiar
+  select.addEventListener("change", () => {
+    progresoGuardado[`item_${pregunta.id}`] = select.value;
+    localStorage.setItem("respuestasFinancieras", JSON.stringify(progresoGuardado));
+  });
+
+  // Ayuda contextual
   const alerta = document.createElement("div");
   alerta.className = "alert alert-secondary mt-2";
   alerta.setAttribute("role", "alert");
   alerta.style.display = "none";
   alerta.textContent = pregunta.ayuda;
+
+  select.addEventListener("focus", () => {
+    document.querySelectorAll(".alert-secondary").forEach((a) => (a.style.display = "none"));
+    alerta.style.display = "block";
+  });
+  select.addEventListener("blur", () => {
+    setTimeout(() => (alerta.style.display = "none"), 200);
+  });
+
   grupo.appendChild(select);
   grupo.appendChild(alerta);
   formulario.appendChild(grupo);
-
-  select.addEventListener("focus", () => {
-    document.querySelectorAll(".alert-secondary").forEach(a => a.style.display = "none");
-    alerta.style.display = "block";
-  });
-
-  select.addEventListener("blur", () => {
-    setTimeout(() => alerta.style.display = "none", 200);
-  });
 });
 
-// Botón de envío
+// Botón enviar
 const boton = document.createElement("button");
 boton.type = "submit";
 boton.className = "btn btn-primary mt-4";
 boton.textContent = "Enviar valoración";
 formulario.appendChild(boton);
 
-// Rutina de validación y envío
+// Validación, cálculo y envío
 formulario.addEventListener("submit", function (e) {
   e.preventDefault();
 
   const resultadosPorSubcategoria = {};
   let incompletas = [];
 
-  // Inicializar subcategorías
-  subcategorias.forEach(sub => resultadosPorSubcategoria[sub] = 0);
+  // Inicializar acumuladores por subcategoría
+  subcategorias.forEach((sub) => (resultadosPorSubcategoria[sub] = 0));
 
-  // Recorrer y validar
-  preguntasFinancieras.forEach(pregunta => {
+  // Recorrer y validar respuestas
+  preguntasFinancieras.forEach((pregunta) => {
     const valorStr = document.getElementById(`item_${pregunta.id}`).value;
 
     if (valorStr === "") {
       incompletas.push(pregunta.id);
     } else {
-      const valor = parseInt(valorStr);
+      const valor = parseInt(valorStr, 10);
       const porcentajeDecimal = parseFloat(pregunta.porcentaje.replace("%", "")) / 100;
       const resultado = valor * porcentajeDecimal;
       resultadosPorSubcategoria[pregunta.subcategoria] += resultado;
@@ -96,24 +113,24 @@ formulario.addEventListener("submit", function (e) {
     Swal.fire({
       title: "Faltan respuestas",
       text: "Por favor responde todas las preguntas antes de enviar.",
-      icon: "warning"
+      icon: "warning",
     });
     return;
   }
 
-  console.log("Resultados por subcategoría:", resultadosPorSubcategoria);
-
-  // Guardar en sessionStorage
+  // Guardar resultados finales de esta área
   sessionStorage.removeItem("valoracionCapitalHumano");
   sessionStorage.setItem("valoracionFinanciera", JSON.stringify(resultadosPorSubcategoria));
+  sessionStorage.setItem("areaSeleccionada", "Contabilidad y Finanzas");
 
   Swal.fire({
     title: "Buen trabajo",
     text: "Formulario enviado exitosamente",
-    icon: "success"
+    icon: "success",
   });
 
+  // 👇 Importante: NO borramos localStorage aquí (para que si vuelve, conserve selección)
   setTimeout(() => {
     window.location.href = "./competitividad.html";
-  }, 2000);
+  }, 1200);
 });

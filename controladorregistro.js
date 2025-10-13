@@ -4,10 +4,9 @@ document.addEventListener("DOMContentLoaded", () => {
   formulario.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    // Captura de campos
     const datos = {
       nombreEmpresa: document.getElementById("empresa").value.trim(),
-      sector: document.getElementById("sector").value.trim().split(". ")[1] || "", // Limpia el número del select
+      sector: document.getElementById("sector").value.trim().split(". ")[1] || "",
       tamanoEmpresa: document.getElementById("tamano").value.trim(),
       ubicacion: document.getElementById("ubicacion").value.trim(),
       nombreResponsable: document.getElementById("nombre").value.trim(),
@@ -19,23 +18,11 @@ document.addEventListener("DOMContentLoaded", () => {
       terminos: document.getElementById("terminos").checked,
     };
 
-    // Validación de campos requeridos
-    if (
-      !datos.nombreEmpresa ||
-      !datos.sector ||
-      !datos.tamanoEmpresa ||
-      !datos.ubicacion ||
-      !datos.nombreResponsable ||
-      !datos.cargoResponsable ||
-      !datos.telefono ||
-      !datos.correo ||
-      !datos.password ||
-      !datos.confirmPassword ||
-      !datos.terminos
-    ) {
+    // Validación
+    if (Object.values(datos).some(v => v === "" || v === false)) {
       return Swal.fire({
         title: "Faltan respuestas",
-        text: "Por favor responde todas las preguntas antes de enviar.",
+        text: "Por favor completa todos los campos antes de enviar.",
         icon: "warning",
       });
     }
@@ -48,21 +35,29 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
-    // Eliminamos confirmPassword del objeto a enviar
     delete datos.confirmPassword;
 
     try {
-        console.log(datos)
+      // ⚡ Mostrar alerta de carga mientras se hace el fetch
+      Swal.fire({
+        title: "Registrando empresa...",
+        text: "Estamos guardando tu información en la base de datos.",
+        allowOutsideClick: false,
+        didOpen: () => {
+          Swal.showLoading();
+        },
+      });
+
       const respuesta = await fetch("https://apidiagnostico.vercel.app/empresas", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(datos),
       });
 
       const resultado = await respuesta.json();
+
+      // Cierra el loader
+      Swal.close();
 
       if (!respuesta.ok) {
         return Swal.fire({
@@ -72,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
 
-      // Éxito
+      // 🎉 Éxito
       await Swal.fire({
         title: "Registro exitoso",
         text: "Tu empresa ha sido registrada correctamente.",
@@ -80,14 +75,12 @@ document.addEventListener("DOMContentLoaded", () => {
         confirmButtonText: "Continuar",
       });
 
-      // Redirigir
       sessionStorage.setItem("nombreUsuario", datos.nombreResponsable);
-      setTimeout(function(){
-       location.replace("./valoracion.html");
-      },500)
-      
+      location.replace("./valoracion.html");
+
     } catch (error) {
       console.error(error);
+      Swal.close();
       Swal.fire({
         title: "Error de conexión",
         text: "No se pudo conectar con el servidor.",
